@@ -17,8 +17,8 @@ namespace VendaDefinitiva.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
+            ViewData["Message"] = "Vendas Web Marcio Klein";
+            ViewData["email"] = "klein.marcio@gmail.com";
             return View();
         }
 
