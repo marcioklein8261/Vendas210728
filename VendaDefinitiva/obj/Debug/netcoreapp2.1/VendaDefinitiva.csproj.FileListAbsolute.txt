@@ -7,7 +7,6 @@ C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Cour
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\bin\Debug\netcoreapp2.1\VendaDefinitiva.pdb
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\bin\Debug\netcoreapp2.1\VendaDefinitiva.Views.dll
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\bin\Debug\netcoreapp2.1\VendaDefinitiva.Views.pdb
-C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\VendaDefinitiva.csproj.AssemblyReference.cache
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\VendaDefinitiva.AssemblyInfoInputs.cache
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\VendaDefinitiva.AssemblyInfo.cs
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\VendaDefinitiva.csproj.CoreCompileInputs.cache
@@ -33,3 +32,5 @@ C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Cour
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\VendaDefinitiva.pdb
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\VendaDefinitiva.genruntimeconfig.cache
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\VendaDefinitiva.csproj.CopyComplete
+C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\VendaDefinitiva.csproj.AssemblyReference.cache
+C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\Razor\Views\Departamento\Index.cshtml.g.cs
