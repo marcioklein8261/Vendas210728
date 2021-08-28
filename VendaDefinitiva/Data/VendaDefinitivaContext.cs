@@ -14,6 +14,8 @@ namespace VendaDefinitiva.Data
         {
         }
 
-        public DbSet<VendaDefinitiva.Models.Departamento> Departamento { get; set; }
+        public DbSet<Departamento> Departamento { get; set; }
+        public DbSet<Vendedor> Vendedor{ get; set; }
+        public DbSet<RegistroDeVenda> RegistroDeVendas{ get; set; }
     }
 }
