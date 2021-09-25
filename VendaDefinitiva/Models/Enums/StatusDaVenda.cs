@@ -4,7 +4,7 @@
     {
         Pendente = 0,
         Faturado = 1,
-        Candelado=2
+        Cancelado=2
 
     }
 }

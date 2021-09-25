@@ -11,11 +11,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using VendaDefinitiva.Data;
+using VendaDefinitiva.Models;
+using System.Globalization;
 
 namespace VendaDefinitiva
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -39,14 +42,22 @@ namespace VendaDefinitiva
             services.AddDbContext<VendaDefinitivaContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("VendaDefinitivaContext"), builder =>
                         builder.MigrationsAssembly("VendaDefinitiva")));
+
+            services.AddScoped<VendaDefinitivaContext>();
+            services.AddScoped<Vendedor>();
+            services.AddScoped<Departamento>();
+            services.AddScoped<RegistroDeVenda>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, VendaDefinitivaContext seedingService )
+           
+
         {
-            if (env.IsDevelopment())
+            if (env.IsDevelopment())    
             {
                 app.UseDeveloperExceptionPage();
+                object p = seedingService;
             }
             else
             {
@@ -58,12 +69,15 @@ namespace VendaDefinitiva
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+
+
+        app.UseMvc(routes =>
+        {
+
+            routes.MapRoute(
+                name: "default",
+                template: "{controller=Home}/{action=Index}/{id?}");
+        });
         }
     }
 }

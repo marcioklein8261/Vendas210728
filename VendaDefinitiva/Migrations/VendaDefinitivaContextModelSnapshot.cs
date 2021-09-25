@@ -4,12 +4,17 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VendaDefinitiva.Data;
+using VendaDefinitiva.Models;
 
 namespace VendaDefinitiva.Migrations
 {
     [DbContext(typeof(VendaDefinitivaContext))]
     partial class VendaDefinitivaContextModelSnapshot : ModelSnapshot
     {
+        public VendaDefinitivaContextModelSnapshot()
+        {
+        }
+
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
