@@ -1,14 +1,26 @@
-﻿
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using VendaDefinitiva.Migrations;
+
 namespace VendaDefinitiva.Migrations
 {
-    public partial class OtherEntities : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Departamento",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Departamento", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Vendedor",
                 columns: table => new
@@ -33,7 +45,7 @@ namespace VendaDefinitiva.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "RegistroDeVendas",
+                name: "RegistroDeVenda",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -41,13 +53,14 @@ namespace VendaDefinitiva.Migrations
                     Data = table.Column<DateTime>(nullable: false),
                     Status = table.Column<int>(nullable: false),
                     VendedorId = table.Column<int>(nullable: true),
-                    Amount = table.Column<double>(nullable: false)
+                    Amount = table.Column<double>(nullable: false),
+                    ValorDaVenda = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RegistroDeVendas", x => x.Id);
+                    table.PrimaryKey("PK_RegistroDeVenda", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_RegistroDeVendas_Vendedor_VendedorId",
+                        name: "FK_RegistroDeVenda_Vendedor_VendedorId",
                         column: x => x.VendedorId,
                         principalTable: "Vendedor",
                         principalColumn: "Id",
@@ -55,8 +68,8 @@ namespace VendaDefinitiva.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_RegistroDeVendas_VendedorId",
-                table: "RegistroDeVendas",
+                name: "IX_RegistroDeVenda_VendedorId",
+                table: "RegistroDeVenda",
                 column: "VendedorId");
 
             migrationBuilder.CreateIndex(
@@ -68,10 +81,13 @@ namespace VendaDefinitiva.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "RegistroDeVendas");
+                name: "RegistroDeVenda");
 
             migrationBuilder.DropTable(
                 name: "Vendedor");
+
+            migrationBuilder.DropTable(
+                name: "Departamento");
         }
     }
 }

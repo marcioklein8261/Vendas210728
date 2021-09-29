@@ -5,13 +5,12 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VendaDefinitiva.Data;
-using VendaDefinitiva.Models;
 
 namespace VendaDefinitiva.Migrations
 {
     [DbContext(typeof(VendaDefinitivaContext))]
-    [Migration("20210828015314_OtherEntities")]
-    partial class OtherEntities
+    [Migration("20210929210714_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,13 +42,15 @@ namespace VendaDefinitiva.Migrations
 
                     b.Property<int>("Status");
 
+                    b.Property<double>("ValorDaVenda");
+
                     b.Property<int?>("VendedorId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("VendedorId");
 
-                    b.ToTable("RegistroDeVendas");
+                    b.ToTable("RegistroDeVenda");
                 });
 
             modelBuilder.Entity("VendaDefinitiva.Models.Vendedor", b =>

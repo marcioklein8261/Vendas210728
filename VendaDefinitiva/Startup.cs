@@ -10,9 +10,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using VendaDefinitiva.Data;
+//using VendaDefinitiva.Data;
 using VendaDefinitiva.Models;
 using System.Globalization;
+using VendaDefinitiva.Data;
 
 namespace VendaDefinitiva
 {
@@ -39,25 +40,30 @@ namespace VendaDefinitiva
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<VendaDefinitivaContext>(options =>
-                    options.UseMySql(Configuration.GetConnectionString("VendaDefinitivaContext"), builder =>
-                        builder.MigrationsAssembly("VendaDefinitiva")));
+            //services.AddDbContext<VendaDefinitivaContext>(options =>
+            //        options.UseMySql(Configuration.GetConnectionString("VendaDefinitivaContext"), builder =>
+            //            builder.MigrationsAssembly("VendaDefinitiva")));
 
-            services.AddScoped<VendaDefinitivaContext>();
+        //    services.AddScoped<VendaDefinitivaContext>();
             services.AddScoped<Vendedor>();
             services.AddScoped<Departamento>();
             services.AddScoped<RegistroDeVenda>();
+
+            services.AddDbContext<VendaDefinitivaContext>(options =>
+                  //  options.UseSqlServer(Configuration.GetConnectionString("VendaDefinitivaContext")));
+                  options.UseMySql(Configuration.GetConnectionString("VendaDefinitivaContext"), builder =>
+                  builder.MigrationsAssembly("VendaDefinitiva")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, VendaDefinitivaContext seedingService )
-           
-
+  //      public void Configure(IApplicationBuilder app, IHostingEnvironment env, VendaDefinitivaContext seedingService)
+// public void Configure(IApplicationBuilder app, IHostingEnvironment env, VendaDefinitivaContext seedingService)
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())    
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                object p = seedingService;
+             //   object p = seedingService;
             }
             else
             {
@@ -71,13 +77,13 @@ namespace VendaDefinitiva
 
 
 
-        app.UseMvc(routes =>
-        {
+            app.UseMvc(routes =>
+            {
 
-            routes.MapRoute(
-                name: "default",
-                template: "{controller=Home}/{action=Index}/{id?}");
-        });
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

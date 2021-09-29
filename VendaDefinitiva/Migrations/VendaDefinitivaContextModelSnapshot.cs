@@ -4,17 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VendaDefinitiva.Data;
-using VendaDefinitiva.Models;
 
 namespace VendaDefinitiva.Migrations
 {
     [DbContext(typeof(VendaDefinitivaContext))]
     partial class VendaDefinitivaContextModelSnapshot : ModelSnapshot
     {
-        public VendaDefinitivaContextModelSnapshot()
-        {
-        }
-
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
@@ -45,13 +40,15 @@ namespace VendaDefinitiva.Migrations
 
                     b.Property<int>("Status");
 
+                    b.Property<double>("ValorDaVenda");
+
                     b.Property<int?>("VendedorId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("VendedorId");
 
-                    b.ToTable("RegistroDeVendas");
+                    b.ToTable("RegistroDeVenda");
                 });
 
             modelBuilder.Entity("VendaDefinitiva.Models.Vendedor", b =>
