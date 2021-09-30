@@ -11,7 +11,7 @@ namespace VendaDefinitiva.Models
         public Vendedor Vendedor { get; set; }
         public double Amount { get; set; }
         public double ValorDaVenda { get; set; }
-
+        
         public RegistroDeVenda()
         {
 
