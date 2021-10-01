@@ -53,17 +53,21 @@ namespace VendaDefinitiva
                   //  options.UseSqlServer(Configuration.GetConnectionString("VendaDefinitivaContext")));
                   options.UseMySql(Configuration.GetConnectionString("VendaDefinitivaContext"), builder =>
                   builder.MigrationsAssembly("VendaDefinitiva")));
+
+            services.AddScoped<SeedingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
   //      public void Configure(IApplicationBuilder app, IHostingEnvironment env, VendaDefinitivaContext seedingService)
 // public void Configure(IApplicationBuilder app, IHostingEnvironment env, VendaDefinitivaContext seedingService)
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingservice)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-             //   object p = seedingService;
+                //   object p = seedingService;
+                seedingservice.Seed();
+
             }
             else
             {
@@ -84,6 +88,8 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+
         }
     }
 }

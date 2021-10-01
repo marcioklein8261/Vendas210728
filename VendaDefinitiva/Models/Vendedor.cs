@@ -34,9 +34,9 @@ namespace VendaDefinitiva.Models
             Vendas.Add(sr);
         }
 
-        public void RemoverVenda(RegistroDeVenda ir)
+        public void RemoverVenda(RegistroDeVenda sr)
         {
-            Vendas.Remove(ir);
+            Vendas.Remove(sr);
         }
 
         public double VendaTotal(DateTime inicial, DateTime final)
