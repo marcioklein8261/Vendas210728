@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using VendaDefinitiva.Models;
 using System.Globalization;
 using VendaDefinitiva.Data;
+using VendaDefinitiva.Services;
 
 namespace VendaDefinitiva
 {
@@ -48,6 +49,7 @@ namespace VendaDefinitiva
             services.AddScoped<Vendedor>();
             services.AddScoped<Departamento>();
             services.AddScoped<RegistroDeVenda>();
+            services.AddScoped<VendedorServico>();
 
             services.AddDbContext<VendaDefinitivaContext>(options =>
                   //  options.UseSqlServer(Configuration.GetConnectionString("VendaDefinitivaContext")));
