@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VendaDefinitiva.Models;
 using VendaDefinitiva.Services;
 
 namespace VendaDefinitiva.Controllers
@@ -23,6 +24,19 @@ namespace VendaDefinitiva.Controllers
         {
             var list = _vendedorServico.FindAll();
             return View(list);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Vendedor vendedor)
+        {
+            _vendedorServico.Insert(vendedor);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
