@@ -50,6 +50,7 @@ namespace VendaDefinitiva
             services.AddScoped<Departamento>();
             services.AddScoped<RegistroDeVenda>();
             services.AddScoped<VendedorServico>();
+            services.AddScoped<DepartmentService>();
 
             services.AddDbContext<VendaDefinitivaContext>(options =>
                   //  options.UseSqlServer(Configuration.GetConnectionString("VendaDefinitivaContext")));

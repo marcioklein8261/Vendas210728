@@ -7,26 +7,20 @@ using VendaDefinitiva.Models;
 
 namespace VendaDefinitiva.Services
 {
-    public class VendedorServico
+    public class DepartmentService
     {
-
         private readonly VendaDefinitivaContext _context;
 
-        public VendedorServico(VendaDefinitivaContext context)
+        public DepartmentService(VendaDefinitivaContext context)
         {
             _context = context;
         }
 
-        public List<Vendedor> FindAll()
-        {
-            return _context.Vendedor.ToList();
-        }
-
-        public void Insert(Vendedor obj)
+        public List<Departamento> FindAll()
         {
 
-            _context.Add(obj);
-            _context.SaveChanges();
+            return _context.Departamento.OrderBy(x => x.Nome).ToList();
         }
+
     }
 }
