@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using VendaDefinitiva.Data;
 using VendaDefinitiva.Models;
-
+using Microsoft.EntityFrameworkCore;
 namespace VendaDefinitiva.Services
 {
     public class VendedorServico
@@ -31,7 +31,7 @@ namespace VendaDefinitiva.Services
 
         public Vendedor EncontrarPeloId(int Id)
         {
-            return _context.Vendedor.FirstOrDefault(obj => obj.Id == Id);   
+            return _context.Vendedor.Include(obj=>obj.Departamento).FirstOrDefault(obj => obj.Id == Id);   
         }
 
         public void Remove(int id)

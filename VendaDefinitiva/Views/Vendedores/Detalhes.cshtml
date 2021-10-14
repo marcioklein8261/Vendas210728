@@ -3,24 +3,21 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Detalhes";
 }
 
-<h2>Eliminar</h2>
-<h3>Confirma eliminação?</h3>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>Vendedor</h4>
-
 
     <dl class=" dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Nome)   
+            @Html.DisplayNameFor(model => model.Nome)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Nome)
-            </dd>
-        
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Email)
         </dt>
@@ -39,13 +36,17 @@
         <dd>
             @Html.DisplayFor(model => model.SalarioBase)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Departamento.Nome)
+        </dd>
     </dl>
 
-     <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Eliminar" class="btn btn-danger" />
-        <hr />
-     
-        <a asp-action="Index">De volta para a lista</a>
-    </form>
+</div>
+<div>
+
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-default ">Editar</a>
+    <a asp-action="Index">De volta para a lista</a>
 </div>
