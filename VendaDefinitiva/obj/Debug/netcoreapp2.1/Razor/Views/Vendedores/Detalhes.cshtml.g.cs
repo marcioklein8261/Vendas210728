@@ -165,7 +165,7 @@ using VendaDefinitiva.Models;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n\r\n</div>\r\n<div>\r\n\r\n    ");
             EndContext();
             BeginContext(1189, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b82e2d688f13421ba2120fa4dc0404de", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "630ddfb97a734eb1b80108a3a34f8958", async() => {
                 BeginContext(1260, 6, true);
                 WriteLiteral("Editar");
                 EndContext();
@@ -201,7 +201,7 @@ using VendaDefinitiva.Models;
             WriteLiteral("\r\n    ");
             EndContext();
             BeginContext(1276, 47, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9103c2bc676049edbda7fbf03b51c398", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "44b63cbf5563421490f483c7b73754df", async() => {
                 BeginContext(1298, 21, true);
                 WriteLiteral("De volta para a lista");
                 EndContext();

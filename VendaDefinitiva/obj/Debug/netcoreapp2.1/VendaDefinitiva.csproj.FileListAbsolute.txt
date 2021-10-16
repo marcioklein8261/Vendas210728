@@ -42,3 +42,4 @@ C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Cour
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\Razor\Views\Vendedores\Create.cshtml.g.cs
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\Razor\Views\Vendedores\Delete.cshtml.g.cs
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\Razor\Views\Vendedores\Detalhes.cshtml.g.cs
+C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\Razor\Views\Vendedores\Edit.cshtml.g.cs

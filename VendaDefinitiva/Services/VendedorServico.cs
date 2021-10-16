@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using VendaDefinitiva.Data;
 using VendaDefinitiva.Models;
 using Microsoft.EntityFrameworkCore;
+using VendaDefinitiva.Services.Exceptions;
 namespace VendaDefinitiva.Services
 {
     public class VendedorServico
@@ -39,6 +40,25 @@ namespace VendaDefinitiva.Services
             var obj = _context.Vendedor.Find(id);
             _context.Vendedor.Remove(obj);
             _context.SaveChanges();
+        }
+
+        public void Atualizar(Vendedor obj)
+        {
+            if (!_context.Vendedor.Any(x => x.Id == obj.Id))
+            {
+                throw new NotFoundExceptions("Id não encontrada!");
+            }
+
+            try { 
+            _context.Update(obj);
+            _context.SaveChanges();
+            
+            }
+            catch (DbConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }
+
         }
     }
 }
