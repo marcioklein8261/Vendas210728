@@ -7,6 +7,8 @@ using VendaDefinitiva.Models;
 using VendaDefinitiva.Services;
 using VendaDefinitiva.Models.ViewModels;
 using VendaDefinitiva.Services.Exceptions;
+using System.Diagnostics;
+
 
 namespace VendaDefinitiva.Controllers
 {
@@ -49,44 +51,52 @@ namespace VendaDefinitiva.Controllers
         }
 
         public IActionResult Delete (int? id)
+
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não fornecido" });
             }
 
             var obj = _vendedorServico.EncontrarPeloId(id.Value);
             if (obj == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não encontrado" });
+
             }
+            //   return RedirectToAction(nameof(Index));
 
             return View(obj);
+
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public IActionResult Delete (int id)
+        public IActionResult Delete(int id)
         {
             _vendedorServico.Remove(id);
             return RedirectToAction(nameof(Index));
         }
-        
+
         public IActionResult Detalhes(int? id)
         {
-            if (id == null)
             {
-                return NotFound();
-            }
+                if (id == null)
+                {
+                    return RedirectToAction(nameof(Error), new { message = "Id não fornecido" });
+                }
 
-            var obj = _vendedorServico.EncontrarPeloId(id.Value);
-            if (obj == null)
-            {
-                return NotFound();
+                var obj = _vendedorServico.EncontrarPeloId(id.Value);
+                if (obj == null)
+                {
+                    return RedirectToAction(nameof(Error), new { message = "Id não encontrado" });
+
+                }
+               //  return RedirectToAction(nameof(Index));
+               return View(obj);
+
             }
-            
-            return View(obj);
 
 
         }
@@ -95,27 +105,27 @@ namespace VendaDefinitiva.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não fornecido" });
             }
 
             var obj = _vendedorServico.EncontrarPeloId(id.Value);
             if (obj == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = "Id não encontrado" });
             }
             List<Departamento> departamentos = _departmentService.FindAll();
             SellerFormViewModel viewModel = new SellerFormViewModel { Vendedor = obj, Departamentos = departamentos };
-            return View(viewModel); 
-                }
+            return View(viewModel);
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
 
 
-        public IActionResult Edit (int id, Vendedor vendedor)
+        public IActionResult Edit(int id, Vendedor vendedor)
         {
-            if(id != vendedor.Id)
+            if (id != vendedor.Id)
             {
-                return BadRequest();
+                return RedirectToAction(nameof(Error), new { message = "Ids não casam" });
             }
 
             try
@@ -123,15 +133,25 @@ namespace VendaDefinitiva.Controllers
                 _vendedorServico.Atualizar(vendedor);
                 return RedirectToAction(nameof(Index));
             }
-            catch (NotFoundExceptions)
+            catch (NotFoundExceptions e)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Error), new { message = e.Message });
             }
 
-            catch (DbConcurrencyException)
+            catch (DbConcurrencyException e)
             {
-                return BadRequest();
+                return RedirectToAction(nameof(Error), new { message = e.Message });
+            }
+        }
+        public IActionResult Error(string message)
+            {
+                var viewModel = new ErrorViewModel
+                {
+                    Message = message,
+                    RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+                };
+                return View(viewModel);
             }
         }
     }
-}
+

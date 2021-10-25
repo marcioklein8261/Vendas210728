@@ -1,12 +1,12 @@
 ﻿@model VendaDefinitiva.Models.Vendedor
+
 @{
-    ViewData["Titlle"] = "Detalhes";
+    ViewData["Title"] = "Delete";
+
 }
+<h2>Detalhes</h2>
 
-<h2>@ViewData["Titlle"]</h2>
 <div>
-    <h4>Vendedor</h4>
-
 
     <dl class=" dl-horizontal">
         <dt>
@@ -36,16 +36,16 @@
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Departamento)
-
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Departamento.Nome)
         </dd>
 
     </dl>
-</div>
 
+</div>
 <div>
-    <a asp-action="Edit"  asp-route-id="@Model.Id">Edit</a>
-    <a  asp-action="Index" >Volta para a lista</a>
+
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-default ">Editar</a>
+    <a asp-action="Index">De volta para a lista</a>
 </div>

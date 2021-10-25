@@ -66,7 +66,7 @@ using VendaDefinitiva.Models;
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(129, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3d5936945644bf8bdb7977bdec2d45c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69b617c0ca094a35930a5e91e92de937", async() => {
                 BeginContext(152, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -116,7 +116,7 @@ using VendaDefinitiva.Models;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(560, 55, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fe34be003094651bb6eaff85be2e67c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15e99a14c13946dc8c088c55a3570e78", async() => {
                 BeginContext(605, 6, true);
                 WriteLiteral("Editar");
                 EndContext();
@@ -151,7 +151,7 @@ using VendaDefinitiva.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(635, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88fe4a722a004600991f058c643366de", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1187ddb75f284f448d785e7a344e789e", async() => {
                 BeginContext(683, 8, true);
                 WriteLiteral("Detalhes");
                 EndContext();
@@ -186,7 +186,7 @@ using VendaDefinitiva.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(715, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9705f1623b24dbbb7dde29efeee4463", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ffb81298f0e34448b1c4fdb7e0b73b60", async() => {
                 BeginContext(762, 8, true);
                 WriteLiteral("Eliminar");
                 EndContext();

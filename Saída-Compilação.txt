@@ -1,0 +1,5 @@
+﻿Build iniciado...
+1>------ Compilação iniciada: Projeto: VendaDefinitiva, Configuração: Debug Any CPU ------
+1>VendaDefinitiva -> C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\bin\Debug\netcoreapp2.1\VendaDefinitiva.dll
+1>VendaDefinitiva -> C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\bin\Debug\netcoreapp2.1\VendaDefinitiva.Views.dll
+========== Compilar: 1 com êxito, 0 com falha, 0 atualizados, 0 ignorados ==========
