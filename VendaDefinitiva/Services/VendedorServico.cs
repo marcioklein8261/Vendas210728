@@ -6,7 +6,9 @@ using VendaDefinitiva.Data;
 using VendaDefinitiva.Models;
 using Microsoft.EntityFrameworkCore;
 using VendaDefinitiva.Services.Exceptions;
+using Microsoft.EntityFrameworkCore;
 namespace VendaDefinitiva.Services
+
 {
     public class VendedorServico
     {

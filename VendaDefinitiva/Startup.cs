@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Localization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ using VendaDefinitiva.Models;
 using System.Globalization;
 using VendaDefinitiva.Data;
 using VendaDefinitiva.Services;
+using System.Globalization;
 
 namespace VendaDefinitiva
 {
@@ -65,6 +67,17 @@ namespace VendaDefinitiva
 // public void Configure(IApplicationBuilder app, IHostingEnvironment env, VendaDefinitivaContext seedingService)
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingservice)
         {
+            var enUS = new CultureInfo("en-US");
+            var localizationOptions = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(enUS),
+                SupportedCultures = new List<CultureInfo> { enUS },
+                SupportedUICultures = new List<CultureInfo> { enUS }
+            };
+            app.UseRequestLocalization(localizationOptions);
+            {
+
+            }
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
