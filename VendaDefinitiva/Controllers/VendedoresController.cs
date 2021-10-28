@@ -46,6 +46,12 @@ namespace VendaDefinitiva.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Vendedor vendedor)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(vendedor);
+            }
+
+
             _vendedorServico.Insert(vendedor);
             return RedirectToAction(nameof(Index));
         }
@@ -123,6 +129,10 @@ namespace VendaDefinitiva.Controllers
 
         public IActionResult Edit(int id, Vendedor vendedor)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(vendedor);
+            }
             if (id != vendedor.Id)
             {
                 return RedirectToAction(nameof(Error), new { message = "Ids não casam" });
