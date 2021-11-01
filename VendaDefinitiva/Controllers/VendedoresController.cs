@@ -83,8 +83,16 @@ namespace VendaDefinitiva.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-          await  _vendedorServico.RemoveAsync(id);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _vendedorServico.RemoveAsync(id);
+                return RedirectToAction(nameof(Index));
+            }
+
+            catch (IntegrityException e)
+            {
+                return RedirectToAction(nameof(Error), new { message = e.Message });
+            }
         }
 
         public async Task<IActionResult> Detalhes(int? id)
