@@ -43,16 +43,13 @@ namespace VendaDefinitiva
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            //services.AddDbContext<VendaDefinitivaContext>(options =>
-            //        options.UseMySql(Configuration.GetConnectionString("VendaDefinitivaContext"), builder =>
-            //            builder.MigrationsAssembly("VendaDefinitiva")));
-
-        //    services.AddScoped<VendaDefinitivaContext>();
+   
             services.AddScoped<Vendedor>();
             services.AddScoped<Departamento>();
             services.AddScoped<RegistroDeVenda>();
             services.AddScoped<VendedorServico>();
             services.AddScoped<DepartmentService>();
+            services.AddScoped<ServicoDeRegistroDeVenda>();
 
             services.AddDbContext<VendaDefinitivaContext>(options =>
                   //  options.UseSqlServer(Configuration.GetConnectionString("VendaDefinitivaContext")));
@@ -74,7 +71,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingS
                 SupportedCultures = new List<CultureInfo> { enUS },
                 SupportedUICultures = new List<CultureInfo> { enUS }
             };
-            app.UseRequestLocalization(localizationOptions);
+            app.UseRequestLocalization(localizationOptions); 
             {
 
             }
