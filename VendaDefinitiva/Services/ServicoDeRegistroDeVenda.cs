@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 
+
 namespace VendaDefinitiva.Services
 {
-    public class ServicoDeRegistroDeVenda
+    public class ServicoDeRegistroDeVenda 
     {
         private readonly VendaDefinitivaContext _context;
 
@@ -18,22 +19,35 @@ namespace VendaDefinitiva.Services
             _context = context;
         }
 
-        public async Task<List<RegistroDeVenda>> EncontrarPorDataAsync(DateTime? dataMinima, DateTime? dataMaxima)
+        
+
+
+        public async Task<List<RegistroDeVenda>> EncontrarPorDataAsync(DateTime? Inicial, DateTime? Final)
         {
             var result = from obj in _context.RegistroDeVenda select obj;
-            if (dataMinima.HasValue)
+            if (Inicial.HasValue)
             {
-                result = result.Where(x => x.Data >= dataMinima.Value);
+                result = result.Where(x => x.Data >= Inicial.Value);
             }
-            if (dataMaxima.HasValue)
+            if (Final.HasValue)
             {
-                result = result.Where(x => x.Data <= dataMaxima.Value);
+                result = result.Where(x => x.Data <= Final.Value);
             }
+
+          
+
             return await result
-                .Include(x=>x.Vendedor)
-                .Include(x=>x.Vendedor.Departamento)
-                .OrderByDescending(x=>x.Data)
+                .Include(x => x.Vendedor)
+                .Include(x => x.Vendedor.Departamento)
+                .OrderByDescending(x => x.Data)
                 .ToListAsync();
+    
+
+        }
+
+        private List<T> List<T>()
+        {
+            throw new NotImplementedException();
         }
     }
 }

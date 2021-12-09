@@ -16,7 +16,7 @@ using VendaDefinitiva.Models;
 using System.Globalization;
 using VendaDefinitiva.Data;
 using VendaDefinitiva.Services;
-using System.Globalization;
+using VendaDefinitiva.Controllers;
 
 namespace VendaDefinitiva
 {
@@ -43,13 +43,16 @@ namespace VendaDefinitiva
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-   
-            services.AddScoped<Vendedor>();
-            services.AddScoped<Departamento>();
-            services.AddScoped<RegistroDeVenda>();
+            services.AddScoped<SeedingService>();
+
+         //   services.AddScoped<Vendedor>();
+   //         services.AddScoped<Departamento>();
+          //  services.AddScoped<RegistroDeVenda>();
             services.AddScoped<VendedorServico>();
             services.AddScoped<DepartmentService>();
-            services.AddScoped<ServicoDeRegistroDeVenda>();
+              services.AddScoped<ServicoDeRegistroDeVenda>();
+          
+
 
             services.AddDbContext<VendaDefinitivaContext>(options =>
                   //  options.UseSqlServer(Configuration.GetConnectionString("VendaDefinitivaContext")));

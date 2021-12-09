@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Sales Records";
+    ViewData["Title"] = "Registro de Vendas";
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -7,17 +7,17 @@
     <div class="col-md-6">
         <form class="form-horizontal" asp-action="BuscaSimples">
             <fieldset>
-                <legend>Simple search</legend>
+                <legend>Busca Simples</legend>
                 <div class="form-group">
-                    <label for="minDate" class="col-lg-2 control-label">Min Date</label>
+                    <label for="minDate" class="col-lg-2 control-label">Início:</label>
                     <div class="col-lg-10">
-                        <input type="date" name="minDate" class="form-control" />
+                        <input type="date" name="Inicial" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="maxDate" class="col-lg-2 control-label">Max Date</label>
+                    <label for="maxDate" class="col-lg-2 control-label">Final:</label>
                     <div class="col-lg-10">
-                        <input type="date" name="maxDate" class="form-control" />
+                        <input type="date" name="Final" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
