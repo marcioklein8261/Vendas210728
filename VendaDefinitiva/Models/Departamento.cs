@@ -27,9 +27,9 @@ namespace VendaDefinitiva.Models
             Vendedores.Add(vendedor);
         }
 
-        public double VendaTotalDoDepto(DateTime inicio, DateTime final)
+        public double VendaTotalDoDepto(DateTime Inicial, DateTime Final)
         {
-            return Vendedores.Sum(Vendedor => Vendedor.VendaTotal(inicio, final));
+            return Vendedores.Sum(Vendedor => Vendedor.VendaTotal(Inicial, Final));
         }
     }
     

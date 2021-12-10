@@ -34,8 +34,6 @@ namespace VendaDefinitiva.Services
                 result = result.Where(x => x.Data <= Final.Value);
             }
 
-          
-
             return await result
                 .Include(x => x.Vendedor)
                 .Include(x => x.Vendedor.Departamento)
@@ -45,9 +43,26 @@ namespace VendaDefinitiva.Services
 
         }
 
-        private List<T> List<T>()
+        public async Task<List<IGrouping<Departamento,RegistroDeVenda>>> EncontrarPorDataAgrupadoAsync(DateTime? Inicial, DateTime? Final)
         {
-            throw new NotImplementedException();
+            var result = from obj in _context.RegistroDeVenda select obj;
+            if (Inicial.HasValue)
+            {
+                result = result.Where(x => x.Data >= Inicial.Value);
+            }
+            if (Final.HasValue)
+            {
+                result = result.Where(x => x.Data <= Final.Value);
+            }
+            return await result
+                .Include(x => x.Vendedor)
+                .Include(x => x.Vendedor.Departamento)
+                .OrderByDescending(x => x.Data)
+                .GroupBy(x=> x.Vendedor.Departamento)
+                .ToListAsync();
+
+
         }
+
     }
 }
