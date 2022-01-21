@@ -19,6 +19,7 @@ namespace VendaDefinitiva.Controllers
         {
             ViewData["Message"] = "Vendas Web Marcio Klein O BOM";
             ViewData["email"] = "klein.marcio@gmail.com";
+            ViewData["Produtos"] = "Informática, Modas, Livraria e Esportivos ";
             return View();
         }
 
