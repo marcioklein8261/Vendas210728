@@ -6,9 +6,13 @@
 
   <ItemGroup>
     <Compile Remove="Views\Departamentoes\**" />
+    <Compile Remove="Views\Produtos\**" />
     <Content Remove="Views\Departamentoes\**" />
+    <Content Remove="Views\Produtos\**" />
     <EmbeddedResource Remove="Views\Departamentoes\**" />
+    <EmbeddedResource Remove="Views\Produtos\**" />
     <None Remove="Views\Departamentoes\**" />
+    <None Remove="Views\Produtos\**" />
   </ItemGroup>
 
   <ItemGroup>
