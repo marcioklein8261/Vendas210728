@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VendaDefinitiva.Data;
 
 namespace VendaDefinitiva.Migrations
 {
     [DbContext(typeof(VendaDefinitivaContext))]
-    partial class VendaDefinitivaContextModelSnapshot : ModelSnapshot
+    [Migration("20220129055323_VendasComProdutos2901220253")]
+    partial class VendasComProdutos2901220253
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

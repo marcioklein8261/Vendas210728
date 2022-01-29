@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VendaDefinitiva.Data;
 
 namespace VendaDefinitiva.Migrations
 {
     [DbContext(typeof(VendaDefinitivaContext))]
-    partial class VendaDefinitivaContextModelSnapshot : ModelSnapshot
+    [Migration("20220129054417_VendasComProdutos")]
+    partial class VendasComProdutos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,7 +33,7 @@ namespace VendaDefinitiva.Migrations
 
             modelBuilder.Entity("VendaDefinitiva.Models.Produto", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdProduto")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("DepartamentoId");
@@ -42,7 +44,7 @@ namespace VendaDefinitiva.Migrations
 
                     b.Property<string>("UnidadeProduto");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdProduto");
 
                     b.HasIndex("DepartamentoId");
 

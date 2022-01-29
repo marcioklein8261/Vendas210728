@@ -10,6 +10,8 @@ namespace VendaDefinitiva.Models
         public int Id { get; set; }
         public string Nome { get; set; }
         public ICollection<Vendedor> Vendedores { get; set; } = new List<Vendedor>();
+        public ICollection<Produto> Produtos { get; set; } = new List<Produto>();
+
 
         public Departamento()
         {
@@ -30,6 +32,11 @@ namespace VendaDefinitiva.Models
         public double VendaTotalDoDepto(DateTime Inicial, DateTime Final)
         {
             return Vendedores.Sum(Vendedor => Vendedor.VendaTotal(Inicial, Final));
+        }
+
+        public void AdicionarProduto(Produto produto)
+        {
+            Produtos.Add(produto);
         }
     }
     
