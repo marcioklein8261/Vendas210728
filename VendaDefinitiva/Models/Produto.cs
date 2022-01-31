@@ -7,7 +7,7 @@ namespace VendaDefinitiva.Models
 {
     public class Produto
     {
-        [Key]
+      
         public int Id{ get; set; }
 
         [Required(ErrorMessage = "{0}requered")]

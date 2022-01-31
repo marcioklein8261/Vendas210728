@@ -46,3 +46,4 @@ C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Cour
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\Razor\Views\RegistroDeVendas\BuscaSimples.cshtml.g.cs
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\Razor\Views\RegistroDeVendas\Index.cshtml.g.cs
 C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\Razor\Views\Products\Index.cshtml.g.cs
+C:\Users\klein\OneDrive\Dropbox\CursoCSharpNelioAlves\CursoCSharpNelioAlves\Course\VendaDefinitiva\VendaDefinitiva\obj\Debug\netcoreapp2.1\VendaDefinitiva.csproj.AssemblyReference.cache

@@ -18,7 +18,8 @@ namespace VendaDefinitiva.Data
         {
             if (_context.Departamento.Any()||
                 _context.Vendedor.Any()||
-                _context.RegistroDeVenda.Any())
+                _context.RegistroDeVenda.Any()||
+                _context.Produto.Any())
             {
                 return; //O banco de dados já foi populado
             }
@@ -47,9 +48,15 @@ namespace VendaDefinitiva.Data
             RegistroDeVenda r10 = new RegistroDeVenda(10, new DateTime(2021, 04, 06), 115000.0, StatusDaVenda.Faturado, v3);
             RegistroDeVenda r11 = new RegistroDeVenda(11, new DateTime(2021, 04, 07), 5789.0, StatusDaVenda.Faturado, v1);
 
+            Produto p1 = new Produto(1, "Computador", "peça", d1);
+            Produto p2 = new Produto(2, "Mouse", "peça", d1);
+            Produto p3 = new Produto(3, "Havaiana", "par", d2);
+            Produto p4 = new Produto(4, "1984", "volume", d3);
+
             _context.Departamento.AddRange(d1, d2, d3);
             _context.Vendedor.AddRange(v1, v2, v3, v4, v5);
             _context.RegistroDeVenda.AddRange(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12);
+            _context.Produto.AddRange(p1, p2, p3, p4);
 
             _context.SaveChanges();
 
