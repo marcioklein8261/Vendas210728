@@ -3,14 +3,31 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VendaDefinitiva.Models;
+using VendaDefinitiva.Services;
+using VendaDefinitiva.Models.ViewModels;
+using VendaDefinitiva.Services.Exceptions;
+using System.Diagnostics;
+
 
 namespace VendaDefinitiva.Controllers
 {
     public class ProductsController : Controller
     {
+        public readonly ProdutoService _produtoServico;
+
+        public ProductsController(ProdutoService produtoServico)
+        {
+            _produtoServico = produtoServico;
+           
+        }
+
+
+
         public IActionResult Index()
         {
-            return View();
+            var list = _produtoServico.EncontreTodo();
+            return View(list);
         }
     }
 }

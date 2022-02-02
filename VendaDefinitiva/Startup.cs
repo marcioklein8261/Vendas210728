@@ -16,7 +16,6 @@ using VendaDefinitiva.Models;
 using System.Globalization;
 using VendaDefinitiva.Data;
 using VendaDefinitiva.Services;
-using VendaDefinitiva.Controllers;
 
 namespace VendaDefinitiva
 {
@@ -45,13 +44,14 @@ namespace VendaDefinitiva
 
             services.AddScoped<SeedingService>();
 
-         //   services.AddScoped<Vendedor>();
-   //         services.AddScoped<Departamento>();
-          //  services.AddScoped<RegistroDeVenda>();
+            //   services.AddScoped<Vendedor>();
+            //         services.AddScoped<Departamento>();
+            //  services.AddScoped<RegistroDeVenda>();
             services.AddScoped<VendedorServico>();
             services.AddScoped<DepartmentService>();
-              services.AddScoped<ServicoDeRegistroDeVenda>();
-          
+            services.AddScoped<ServicoDeRegistroDeVenda>();
+            services.AddScoped<ProdutoService>();
+
 
 
             services.AddDbContext<VendaDefinitivaContext>(options =>
@@ -63,9 +63,9 @@ namespace VendaDefinitiva
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-  //      public void Configure(IApplicationBuilder app, IHostingEnvironment env, VendaDefinitivaContext seedingService)
-// public void Configure(IApplicationBuilder app, IHostingEnvironment env, VendaDefinitivaContext seedingService)
-public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingservice)
+        //      public void Configure(IApplicationBuilder app, IHostingEnvironment env, VendaDefinitivaContext seedingService)
+        // public void Configure(IApplicationBuilder app, IHostingEnvironment env, VendaDefinitivaContext seedingService)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingservice)
         {
             var enUS = new CultureInfo("en-US");
             var localizationOptions = new RequestLocalizationOptions
@@ -74,7 +74,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingS
                 SupportedCultures = new List<CultureInfo> { enUS },
                 SupportedUICultures = new List<CultureInfo> { enUS }
             };
-            app.UseRequestLocalization(localizationOptions); 
+            app.UseRequestLocalization(localizationOptions);
             {
 
             }
