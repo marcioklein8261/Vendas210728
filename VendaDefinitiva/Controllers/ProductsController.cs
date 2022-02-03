@@ -19,7 +19,7 @@ namespace VendaDefinitiva.Controllers
         public ProductsController(ProdutoService produtoServico)
         {
             _produtoServico = produtoServico;
-           
+
         }
 
 
@@ -29,5 +29,29 @@ namespace VendaDefinitiva.Controllers
             var list = _produtoServico.EncontreTodo();
             return View(list);
         }
+
+        //[ValidateAntiForgeryToken]
+        //[HttpPost]
+        //public IActionResult Create(Produto produto)
+        //{
+        //    _produtoServico.Create(produto);
+        //    return RedirectToAction(nameof(Index));
+        //}
+
+        public IActionResult Entrada()
+        {
+            return View();
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public IActionResult Entrada(Produto produto)
+        {
+            _produtoServico.Inserir(produto);
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
     }
 }

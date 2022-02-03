@@ -20,6 +20,13 @@ namespace VendaDefinitiva.Services
         {
             return _context.Produto.ToList();
         }
+
+        
+        public void Inserir(Produto obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
     }
 
 
